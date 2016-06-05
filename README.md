@@ -10,6 +10,6 @@ Throttling support has come as a boon for service charecterization. Benchmarking
 
 There can be various use cases to extend it, the example [here](https://github.com/meetpraveen/gatling-custom-dsls/blob/master/src/main/scala/io/praveen/gatling/extension/dsl/ThrottleExtension.scala) shows how we can have a continuous ramp up of the throttling RPS.
 
-## Producer-consumer contract prallel scenarios - 
+## Producer-consumer contract parallel scenarios - 
 Scenarios in gatling by default run in parallel. This is good but, if one has a producer/consumer kind of service supported by multiple workers and we have to develop detached scenarios for producers and consumers we need some kind of blocked/waiting support across scenarios. A combination of [pushToQueue](https://github.com/meetpraveen/gatling-custom-dsls/blob/master/src/main/scala/io/praveen/gatling/extension/dsl/CheckExtension.scala#L30) and [withPolledRecord](https://github.com/meetpraveen/gatling-custom-dsls/blob/master/src/main/scala/io/praveen/gatling/extension/dsl/ExecutorExtension.scala#L21) gives this. This in its part describes how to create your own execute blocks.
 
