@@ -5,9 +5,11 @@ _Default_ DSLs are very powerful tools to build up a load scenario to match the 
 ## Extending checks - 
 [Checks](http://gatling.io/docs/2.2.1/http/http_check.html) are the basic validation blocks in gatling scenarios. A lot can be done on the reponse using the [check extractors](http://gatling.io/docs/2.2.1/http/http_check.html#http-check-extracting) like find and transform (which is the best option if you don't want to extend the DSL and work around the existing DSL). The example [here]() shows how we use the checks and push the extracted response to a queue.
 
-## Extending throttling - Throttling support has come as a boon for service charecterization. Benchmarking of the services is an important part to charecterize it. And one of the important parameters for benchmarking is the load a stateless service can take. For a stateless service the load is almost always measured in the RPS terms. Concurrent session is important, but the measure of how many request per second a service can handle is almost always more pertinent.
+## Extending throttling - 
+Throttling support has come as a boon for service charecterization. Benchmarking of the services is an important part to charecterize it. And one of the important parameters for benchmarking is the load a stateless service can take. For a stateless service the load is almost always measured in the RPS terms. Concurrent session is important, but the measure of how many request per second a service can handle is almost always more pertinent.
 
 There can be various use cases to extend it, the example [here]() shows how we can have a continuous ramp up of the throttling RPS.
 
-## Producer-consumer contract prallel scenarios - Scenarios in gatling by default run in parallel. This is good but, if one has a producer/consumer kind of service supported by multiple workers and we have to develop detached scenarios for producers and consumers we need some kind of blocked/waiting support across scenarios. A combination of [pushToQueuw]() and [withBlockOnQueue]() gives this. This in its part describes how to create your own execute blocks.
+## Producer-consumer contract prallel scenarios - 
+Scenarios in gatling by default run in parallel. This is good but, if one has a producer/consumer kind of service supported by multiple workers and we have to develop detached scenarios for producers and consumers we need some kind of blocked/waiting support across scenarios. A combination of [pushToQueuw]() and [withBlockOnQueue]() gives this. This in its part describes how to create your own execute blocks.
 
